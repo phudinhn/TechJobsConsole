@@ -66,11 +66,15 @@ namespace TechJobsConsole
 
             foreach (Dictionary<string, string> job in AllJobs)
             {
-                foreach (string key in jobs.Keys)
+                foreach (string key in job.Keys)
                 {
-
+                    if ((job[key]).ToUpper().Contains(searchTerm.ToUpper()))
+                    {
+                        jobs.Add(job);
+                    }
                 }
             }
+            return jobs;
         }
 
         /*
